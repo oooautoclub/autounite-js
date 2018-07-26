@@ -51,7 +51,8 @@
         "package-deb": "npm run prepackage && build  -p never --linux deb",
         "package-win": "npm run prepackage && build  -p never --windows",
         "package-mac": "npm run prepackage && build  -p never --mac dmg",
-        "postpackage": "node write_digest.js"
+        "postpackage": "node write_digest.js",
+        "deploy:s3-upload": "aws --profile autocoin s3 cp build/dist s3://blockchain.aunite.com/ --recursive"
     },
     "jest": {
         "scriptPreprocessor": "<rootDir>/__tests__/jest-preprocessor.js",
@@ -135,6 +136,7 @@
         "bignumber.js": "^4.0.0",
         "bitshares-ui-style-guide": "git+https://github.com/bitshares/bitshares-ui-style-guide.git#02a57452198f9c9b7218f38868045df599b005a5",
         "bitsharesjs": "^1.8.0",
+        "bitsharesjs-ws": "^1.5.4",
         "browser-locale": "^1.0.3",
         "classnames": "^2.2.1",
         "cookies-js": "^1.2.1",

@@ -137,7 +137,7 @@ class Assets extends React.Component {
                             ? description.market
                             : coreAsset
                                 ? coreAsset.get("symbol")
-                                : "BTS");
+                                : "AUNIT");
 
                     return (
                         <tr key={asset.symbol}>
@@ -198,7 +198,7 @@ class Assets extends React.Component {
                             ? description.market
                             : coreAsset
                                 ? coreAsset.get("symbol")
-                                : "BTS");
+                                : "AUNIT");
 
                     return (
                         <tr key={asset.symbol}>
@@ -269,7 +269,7 @@ class Assets extends React.Component {
                             ? description.market
                             : coreAsset
                                 ? coreAsset.get("symbol")
-                                : "BTS");
+                                : "AUNIT");
 
                     return (
                         <tr key={asset.id.split(".")[2]}>

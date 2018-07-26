@@ -264,7 +264,7 @@ class CreateAccount extends React.Component {
                             this.accountNameInput = ref.refs.nameInput;
                         }
                     }}
-                    cheapNameOnly={!!firstAccount}
+                    cheapNameOnly={false}
                     onChange={this.onAccountNameChange.bind(this)}
                     accountShouldNotExist={true}
                     placeholder={counterpart.translate("wallet.account_public")}
