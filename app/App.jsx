@@ -26,11 +26,10 @@ import {Route, Switch} from "react-router-dom";
 // Nested route components
 import Page404 from "./components/Page404/Page404";
 
-const Exchange = Loadable({
-    loader: () =>
-        import(/* webpackChunkName: "exchange" */ "./components/Exchange/ExchangeContainer"),
-    loading: LoadingIndicator
-});
+// const Exchange = Loadable({
+//     loader: () => import(/* webpackChunkName: "exchange" */ './components/Exchange/ExchangeContainer'),
+//     loading: LoadingIndicator,
+// })
 
 const Explorer = Loadable({
     loader: () =>
@@ -47,17 +46,6 @@ const AccountPage = Loadable({
 const Transfer = Loadable({
     loader: () =>
         import(/* webpackChunkName: "transfer" */ "./components/Transfer/Transfer"),
-    loading: LoadingIndicator
-});
-
-const AccountDepositWithdraw = Loadable({
-    loader: () =>
-        import(/* webpackChunkName: "deposit-withdraw" */ "./components/Account/AccountDepositWithdraw"),
-    loading: LoadingIndicator
-});
-
-const News = Loadable({
-    loader: () => import(/* webpackChunkName: "news" */ "./components/News"),
     loading: LoadingIndicator
 });
 
@@ -342,10 +330,7 @@ class App extends React.Component {
                                     path="/accounts"
                                     component={DashboardAccountsOnly}
                                 />
-                                <Route
-                                    path="/market/:marketID"
-                                    component={Exchange}
-                                />
+
                                 <Route
                                     path="/settings/:tab"
                                     component={Settings}
@@ -358,15 +343,9 @@ class App extends React.Component {
                                     component={Transfer}
                                 />
                                 <Route
-                                    path="/deposit-withdraw"
-                                    exact
-                                    component={AccountDepositWithdraw}
-                                />
-                                <Route
                                     path="/create-account"
                                     component={LoginSelector}
                                 />
-                                <Route path="/news" exact component={News} />
 
                                 {/* Explorer routes */}
                                 <Route

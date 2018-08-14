@@ -587,17 +587,6 @@ class CreateAccountPassword extends React.Component {
 
                         <tr>
                             <td>
-                                <Translate content="wallet.tips_deposit" />:
-                            </td>
-                            <td>
-                                <Link to="/deposit-withdraw">
-                                    <Translate content="wallet.link_deposit" />
-                                </Link>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
                                 <Translate content="wallet.tips_transfer" />:
                             </td>
                             <td>

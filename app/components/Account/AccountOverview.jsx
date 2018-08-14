@@ -3,7 +3,6 @@ import Immutable from "immutable";
 import Translate from "react-translate-component";
 import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import AssetName from "../Utility/AssetName";
-import MarginPositions from "./MarginPositions";
 import {RecentTransactions} from "./RecentTransactions";
 import Proposals from "components/Account/Proposals";
 import {ChainStore} from "bitsharesjs";
@@ -11,7 +10,6 @@ import SettingsActions from "actions/SettingsActions";
 import utils from "common/utils";
 
 import {Tabs, Tab} from "../Utility/Tabs";
-import AccountOrders from "./AccountOrders";
 import cnames from "classnames";
 import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import {checkMarginStatus} from "common/accountHelper";
@@ -558,71 +556,6 @@ class AccountOverview extends React.Component {
                                         balanceObjects={includedBalancesList}
                                     />
                                 )}
-                            </Tab>
-
-                            <Tab
-                                title="account.open_orders"
-                                subText={ordersValue}
-                            >
-                                <AccountOrders {...this.props}>
-                                    <tbody>
-                                        <tr className="total-value">
-                                            <td
-                                                colSpan="7"
-                                                style={{textAlign: "right"}}
-                                            >
-                                                {totalValueText}
-                                            </td>
-                                            <td
-                                                colSpan="2"
-                                                style={{textAlign: "left"}}
-                                            >
-                                                {ordersValue}
-                                            </td>
-                                            {this.props.isMyAccount ? (
-                                                <td />
-                                            ) : null}
-                                        </tr>
-                                    </tbody>
-                                </AccountOrders>
-                            </Tab>
-
-                            <Tab
-                                title="account.collaterals"
-                                subText={
-                                    <span
-                                        className={
-                                            this.state.globalMarginStatus
-                                        }
-                                    >
-                                        {marginValue}
-                                    </span>
-                                }
-                            >
-                                <div className="content-block">
-                                    <div className="generic-bordered-box">
-                                        <MarginPositions
-                                            preferredUnit={preferredUnit}
-                                            className="dashboard-table"
-                                            callOrders={call_orders}
-                                            account={account}
-                                        >
-                                            <tr className="total-value">
-                                                <td>{totalValueText}</td>
-                                                <td />
-                                                <td>{debtValue}</td>
-                                                <td className="column-hide-medium">
-                                                    {collateralValue}
-                                                </td>
-                                                <td />
-                                                <td>{marginValue}</td>
-                                                <td className="column-hide-small" />
-                                                <td className="column-hide-small" />
-                                                <td colSpan="3" />
-                                            </tr>
-                                        </MarginPositions>
-                                    </div>
-                                </div>
                             </Tab>
 
                             <Tab

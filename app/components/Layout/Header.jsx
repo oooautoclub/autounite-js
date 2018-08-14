@@ -503,48 +503,6 @@ class Header extends React.Component {
                 </a>
             );
         }
-        if (active.indexOf("deposit-withdraw") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("deposit-withdraw") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="deposit"
-                        title="icons.deposit.deposit_withdraw"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="header.deposit-withdraw"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("news") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({active: active.indexOf("news") !== -1})}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="news"
-                        title="icons.news"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="news.news"
-                    />
-                </a>
-            );
-        }
         if (active.indexOf("help") !== -1) {
             dynamicMenuItem = (
                 <a
@@ -561,163 +519,6 @@ class Header extends React.Component {
                         className="column-hide-small"
                         component="span"
                         content="header.help"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/voting") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/voting") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="thumbs-up"
-                        title="icons.thumbs_up"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.voting"
-                    />
-                </a>
-            );
-        }
-        if (
-            active.indexOf("/assets") !== -1 &&
-            active.indexOf("explorer") === -1
-        ) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/assets") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="assets"
-                        title="icons.assets"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="explorer.assets.title"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/signedmessages") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/signedmessages") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.signed_messages"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.signedmessages.menuitem"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/member-stats") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/member-stats") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.membership_stats"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.member.stats"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/vesting") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/vesting") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="hourglass"
-                        title="icons.hourglass"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.vesting.title"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/whitelist") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/whitelist") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="list"
-                        title="icons.list"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.whitelist.title"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("/permissions") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/permissions") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="warning"
-                        title="icons.warning"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.permissions"
                     />
                 </a>
             );
@@ -970,40 +771,6 @@ class Header extends React.Component {
                                 <a
                                     style={{flexFlow: "row"}}
                                     className={cnames(
-                                        active.indexOf("market/") !== -1
-                                            ? null
-                                            : "column-hide-xxs",
-                                        {
-                                            active:
-                                                active.indexOf("market/") !== -1
-                                        }
-                                    )}
-                                    onClick={this._onNavigate.bind(
-                                        this,
-                                        tradeUrl
-                                    )}
-                                >
-                                    <Icon
-                                        size="1_5x"
-                                        style={{
-                                            position: "relative",
-                                            top: -2,
-                                            left: -8
-                                        }}
-                                        name="trade"
-                                        title="icons.trade.exchange"
-                                    />
-                                    <Translate
-                                        className="column-hide-small"
-                                        component="span"
-                                        content="header.exchange"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    style={{flexFlow: "row"}}
-                                    className={cnames(
                                         active.indexOf("explorer") !== -1
                                             ? null
                                             : "column-hide-xs",
@@ -1141,7 +908,9 @@ class Header extends React.Component {
                         onClick={this._toggleDropdownMenu}
                         className={cnames(
                             "menu-dropdown-wrapper dropdown-wrapper",
-                            {active: this.state.dropdownActive}
+                            {
+                                active: this.state.dropdownActive
+                            }
                         )}
                     >
                         <div className="hamburger">{hamburger}</div>

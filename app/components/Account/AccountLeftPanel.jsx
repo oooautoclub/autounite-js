@@ -209,14 +209,6 @@ class AccountLeftPanel extends React.Component {
                                 <ul className="account-left-menu">
                                     <li>
                                         <Link
-                                            to={`/account/${account_name}/assets/`}
-                                            activeClassName="active"
-                                        >
-                                            <Translate content="account.user_issued_assets.issued_assets" />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
                                             to={`/account/${account_name}/permissions/`}
                                             activeClassName="active"
                                         >
@@ -241,14 +233,6 @@ class AccountLeftPanel extends React.Component {
                                             </Link>
                                         </li>
                                     ) : null}
-                                    <li>
-                                        <Link
-                                            to={`/account/${account_name}/signedmessages/`}
-                                            activeClassName="active"
-                                        >
-                                            <Translate content="account.signedmessages.menuitem" />
-                                        </Link>
-                                    </li>
                                 </ul>
                             ) : null}
                         </section>
