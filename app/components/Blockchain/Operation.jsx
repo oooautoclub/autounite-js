@@ -86,7 +86,6 @@ class Row extends React.Component {
         }
 
         fee.amount = parseInt(fee.amount, 10);
-
         return (
             <tr>
                 {this.props.includeOperationId ? (
@@ -133,6 +132,7 @@ class Row extends React.Component {
                                 <FormattedAsset
                                     amount={fee.amount}
                                     asset={fee.asset_id}
+                                    decimalOffset={20}
                                 />
                             </span>
                         ) : null}
@@ -209,7 +209,6 @@ class Operation extends React.Component {
             column = null,
             color = "info";
         let memoComponent = null;
-
         switch (
             ops[op[0]] // For a list of trx types, see chain_types.coffee
         ) {
@@ -237,7 +236,7 @@ class Operation extends React.Component {
                                     arg: "amount",
                                     decimalOffset:
                                         op[1].amount.asset_id === "1.3.0"
-                                            ? 5
+                                            ? 0
                                             : null
                                 },
                                 {type: "account", value: op[1].to, arg: "to"}

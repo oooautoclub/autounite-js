@@ -346,7 +346,7 @@ class AccountOverview extends React.Component {
                 <div className="content-block small-12">
                     <div className="tabs-container generic-bordered-box">
                         <Tabs
-                            defaultActiveTab={0}
+                            defaultActiveTab={1}
                             segmented={false}
                             setting="overviewTab"
                             className="account-tabs"
