@@ -172,15 +172,17 @@ class RecentTransactions extends React.Component {
         for (let account of accountsList) {
             if (account) {
                 let h = account.get("history");
+                let current_history = [];
                 if (h)
-                    history = history.concat(
-                        h
-                            .toJS()
-                            .filter(
-                                op =>
-                                    !seen_ops.has(op.id) && seen_ops.add(op.id)
-                            )
-                    );
+                    current_history = h
+                        .toJS()
+                        .filter(
+                            op => !seen_ops.has(op.id) && seen_ops.add(op.id)
+                        );
+                current_history.forEach(item => {
+                    item.owner = account.get("id");
+                });
+                history = history.concat(current_history);
             }
         }
         if (filterOp) {
@@ -288,6 +290,7 @@ class RecentTransactions extends React.Component {
                           inverted={false}
                           hideOpLabel={compactView}
                           fullDate={true}
+                          owner={o.owner}
                       />
                   );
               })

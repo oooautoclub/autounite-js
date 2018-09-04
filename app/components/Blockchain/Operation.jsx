@@ -204,7 +204,7 @@ class Operation extends React.Component {
     }
 
     render() {
-        let {op, current, block} = this.props;
+        let {op, current, block, owner} = this.props;
         let line = null,
             column = null,
             color = "info";
@@ -216,8 +216,13 @@ class Operation extends React.Component {
                 if (op[1].memo) {
                     memoComponent = <MemoText memo={op[1].memo} />;
                 }
-
-                color = "success";
+                if (owner) {
+                    if (owner === op[1].from) {
+                        color = "success";
+                    } else {
+                        color = "cancel";
+                    }
+                }
                 op[1].amount.amount = parseFloat(op[1].amount.amount);
 
                 column = (
