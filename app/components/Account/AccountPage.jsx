@@ -16,6 +16,7 @@ import {Route, Switch, Redirect} from "react-router-dom";
 import {AccountAssetCreate} from "./AccountAssetCreate";
 import AccountAssetUpdate from "./AccountAssetUpdate";
 import AccountOverview from "./AccountOverview";
+import AccountPermissions from "./AccountPermissions";
 
 class AccountPage extends React.Component {
     static propTypes = {
@@ -106,6 +107,13 @@ class AccountPage extends React.Component {
                             exact
                             render={() => (
                                 <AccountAssetUpdate {...passOnProps} />
+                            )}
+                        />
+                        <Route
+                            path={`/account/${account_name}/permissions`}
+                            exact
+                            render={() => (
+                                <AccountPermissions {...passOnProps} />
                             )}
                         />
                     </Switch>
