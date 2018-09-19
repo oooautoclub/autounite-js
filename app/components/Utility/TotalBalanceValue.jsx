@@ -274,7 +274,7 @@ class TotalValue extends MarketStatsCheck {
                         asset={toAsset.get("id")}
                         decimalOffset={
                             toAsset.get("symbol").indexOf("BTC") === -1
-                                ? toAsset.get("precision") - 2
+                                ? toAsset.get("precision") - 5
                                 : 4
                         }
                     />
@@ -351,7 +351,6 @@ class TotalBalanceValue extends React.Component {
         let {balances, collateral, debt, openOrders, inHeader} = this.props;
         let assets = List();
         let amounts = [];
-
         balances.forEach(balance => {
             if (balance) {
                 assets = assets.push(balance.get("asset_type"));

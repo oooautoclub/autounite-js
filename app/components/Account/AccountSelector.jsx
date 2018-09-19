@@ -109,10 +109,16 @@ class AccountSelector extends React.Component {
     onInputChanged(e) {
         let {onChange, onAccountChanged, accountName, typeahead} = this.props;
         this.setState({inputChanged: true});
-
         let _accountName = this.getVerifiedAccountName(e);
         let _account = ChainStore.getAccount(_accountName);
-
+        const callback = () => {
+            _account = ChainStore.getAccount(_accountName);
+            if (_account) {
+                onChange(_accountName);
+            }
+            ChainStore.unsubscribe(callback);
+        };
+        ChainStore.subscribe(callback);
         if (onChange && _accountName !== accountName) onChange(_accountName);
 
         // None-Typeahead Component compatibility
@@ -125,7 +131,6 @@ class AccountSelector extends React.Component {
 
     getVerifiedAccountName(e) {
         let {allowUppercase} = this.props;
-
         let value = null;
         if (typeof e === "string") {
             value = e;
@@ -134,13 +139,12 @@ class AccountSelector extends React.Component {
         } else {
             value = "";
         }
-
         if (!allowUppercase) value = value.toLowerCase();
 
         // If regex matches ^.*#/account/account-name/.*$, parse out account-name
         let _value = value.replace("#", "").match(/(?:\/account\/)(.*)/);
-        if (_value) value = _value[1];
 
+        if (_value) value = _value[1];
         return value;
     }
 
