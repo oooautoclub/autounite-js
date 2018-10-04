@@ -1,15 +1,15 @@
-BitShares-UI
+AutoUnite-UI
 ============
 [中文版](README_zh.md)
 
-This is a light wallet that connects to a BitShares API provided by the *witness_node* executable.
+This is a light wallet that connects to a AutoUnite API provided by the *witness_node* executable.
 
 
 It *stores all keys locally* in the browser, *never exposing your keys to anyone* as it signs transactions locally before transmitting them to the API server which then broadcasts them to the blockchain network. The wallet is encrypted with a password of your choosing and encrypted in a browser database.
 
 ## Getting started
 
-BitShares-UI depends node Node.js, and version 6+ is required.
+AutoUnite-UI depends node Node.js, and version 6+ is required.
 
 On Ubuntu and OSX, the easiest way to install Node is to use the [Node Version Manager](https://github.com/creationix/nvm).
 
@@ -24,8 +24,8 @@ nvm use v6
 Once you have Node installed, you can clone the repo:
 
 ```
-git clone https://github.com/bitshares/bitshares-ui.git
-cd bitshares-ui
+git clone https://github.com/oooautoclub/autounite-js
+cd autounite-js
 ```
 
 Before launching the GUI you will need to install the npm packages:
